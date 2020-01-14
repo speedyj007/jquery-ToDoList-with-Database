@@ -1,0 +1,192 @@
+
+
+.h1{
+font-family:Constantia;
+font-size:30px;
+}
+
+.register_border{
+border-radius:5px;
+border:1px solid lightgrey;
+padding:15px 15px;
+width:40%;
+margin-bottom:25px;
+}
+
+.l1{
+	font-family:Courier;
+	font-size:18px;
+}
+
+.t1{
+	border:1px solid lightgrey;
+	font-family:Courier;
+	font-size:18px;
+	border-radius:5px;
+	padding:5px 15px;
+	width:100%;
+	outline:none;
+        margin-bottom: 5px;
+}
+
+::placeholder{
+	
+	font-family:Courier;
+}
+
+.b2{
+    background: none;
+    border:none;
+    outline: none;
+}
+
+
+
+.b1{
+	font-family:Courier;
+	outline:none;
+	font-size:20px;
+	background:#5a695a;
+	border-radius:7px;
+	padding:8px 15px;
+	color:white;
+	outline:none;
+}
+
+.b1:hover{
+	background:#3c9e3c;
+}
+
+.buttonSection{
+	margin-top:20px;
+	padding:10px 15px;
+}
+
+.buttonSection2{
+	
+	padding:0px 15px;
+}
+
+.star{
+	color:red;
+	margin-left:5px;
+}
+
+
+.error{
+	color:red;
+	
+}
+	
+.t2{
+margin-left:5px;	
+}
+
+form{
+    margin-top: 15px;
+}
+
+table{
+     margin-top: 50px;
+     margin-bottom: 22px;
+    
+}
+
+.b3{
+  font-family:Courier;
+	outline:none;
+	font-size:15px;
+	background:#5a695a;
+	border-radius:7px;
+	padding:8px 10px;
+	color:white;
+	outline:none;
+        margin-bottom: 8px;
+        margin-top: 8px;
+}
+
+.b4{
+  font-family:Courier;
+	outline:none;
+	font-size:15px;
+	background:#5a695a;
+	border-radius:7px;
+	padding:8px 10px;
+	color:white;
+	outline:none;
+        margin-bottom: 8px;
+        margin-top: 8px;
+}
+
+.fa-edit,.fa-trash-alt{
+    font-size: 20px;
+}
+th,td{
+    border-bottom: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
+    padding: 2px 15px;
+}
+
+.c1{
+    margin-left: 15px;
+}
+.tdl1{
+    text-align: center;
+    outline: none;
+    border:none;
+    border-bottom: 1px solid lightgrey;
+}
+.welcome{
+    font-family: Courier;
+    font-size: 22px;
+}
+
+.selected{
+    background: lightblue;
+}
+
+button:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+button:disabled:hover{
+    border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666; 
+}
+
+.taskID ,#listID{
+    display: none;
+}
+
+th{
+     background: lightgrey;
+}
+input:read-only{
+    width:30px;
+    color:grey;
+}
+
+.red{
+    background: lightgrey;
+}
+
+@media only screen and (max-width: 600px) {
+	.register_border{
+	width:100%;
+	}
+	
+	.t1,.l1,.b1{
+	font-size:15px;
+	
+	}
+	
+	.h1{
+	font-size:20px;
+	}
+        
+
+
+}
