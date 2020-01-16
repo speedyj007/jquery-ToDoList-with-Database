@@ -15,19 +15,37 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
+  <style>
+      
+
+  </style>
+  
 </head>
-<body>
-    <h4><u>Greetings</u> <u>of</u> <u>the</u> <u>Day</u>!!</h4>   
+<body class="container ">
     <br>
+    
+    
+    <?php
+       error_reporting(0);
+   
+    ?>
+    
+    <br><br>
     <form name="form4"  method="post">
         <label>Enter Task: </label>&nbsp;
-        <input type="text" class="tdl1" placeholder=" Enter Items to Add" id="list" name="items" >&nbsp;
+        <input type="text" class="tdl1" placeholder=" Enter Items to Add" id="list" name="items" value="<?php echo $_POST['items']?> " >&nbsp;
         <button type="submit" value="Add" class="b1"   id="add">Add</button> &nbsp;
-        <button type="button" value="update" class="b1"   id="updateRow" >Update</button><br>
+        <button type="button" value="update" class="b1"   id="updateRow"  disabled>Update</button><br>
         <label class="taskID">Task ID :</label>&nbsp;
-         <input type="text" class="tdl1" placeholder=" Task Id" id="listID" name="task" >&nbsp;<label id="success"></label>
+         <input type="text" class="tdl1" placeholder=" Task Id" id="listID" name="task" >&nbsp;
+    
+   
+    </form>
+    
         
-<?php        
+         <?php  
+
+
         $conn = new mysqli("localhost", "root", "", "register");
 
 if ($conn->connect_error) {
@@ -38,7 +56,7 @@ if ($conn->connect_error) {
  $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table id='table1' class = 'table' >
+    echo "<table id='table1' class = 'table table-responsive' >
         <tbody><tr>
                 <th><input type='checkbox'='  class='c1' onclick = 'SelectAll()' id = 'parent' >&nbsp;Select All</th>
                 <th>Tasks</th>
@@ -59,13 +77,7 @@ if ($result->num_rows > 0) {
 }
 
 $conn->close();
-     ?>   
-        
-        
-      
-        
-    </form>
- 
+?>
     <script src="ToDoList.js"></script>
 </body>
 </html>

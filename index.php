@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+
+
+
+session_unset();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +45,8 @@
         </div>
 </div>
 </div>
+    
+    
     <script src ="loginData.js">
         </script>
         </body>

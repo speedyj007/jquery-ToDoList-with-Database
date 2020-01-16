@@ -38,17 +38,16 @@
                    
                    success:function(data)
                    {
-                     $("#success").html(data);
+                     alert(data);
                     
-                        setInterval(function(){
-                           $("#success").html(s);
-                       },3000);
+                        
                        location.reload(true);
 
                    }
        });
        
        $("#list").val(s);
+        e.stopImmediatePropagation();
    }
 });
 
@@ -56,7 +55,7 @@
 
 //Delete Row
 
-$(".table tbody").on('click','#deleteRow',function(){
+$(".table tbody").on('click','#deleteRow',function(e){
     
     var deleteItems = $(this).closest("tr");
     var col1 = deleteItems.find("td:eq(1)").text();
@@ -75,9 +74,11 @@ $(".table tbody").on('click','#deleteRow',function(){
                    success:function(data)
 			{
                             alert(data);
+                             
                         }
                });  
                $(this).closest("tr").remove();
+                e.stopImmediatePropagation();
 });
 
 
@@ -90,6 +91,8 @@ $(".table tbody").on('click','#editRow',function(){
     var col3 = editItems.find("td:eq(2)").text();
     $(".taskID").show();
      $("#listID").show();
+     $("#add").attr("disabled",true);
+     $("#updateRow").attr("disabled",false);
      $("#listID").attr("readonly",true);
     $("#list").val(col2);
     $("#listID").val(col3);
@@ -105,22 +108,23 @@ $(".table tbody").on('click','#editRow',function(){
     
  //update Row
  
- $("#updateRow").click(function(){
+ $("#updateRow").click(function(e){
  
     var col4 = $("#list").val().trim();
    var col5 =  $("#listID").val().trim();
-   
+    var editShow = $(this).closest("tr");
+    
+    editShow.find("td:eq(1)").text(col4);
+    console.log(editShow);
     console.log(col5);
     
    if(col4=="")
    {
        alert("please enter something to add");
+       return false;
    }
    
-   else if(col4==null)
-   {
-       alert("please enter something");
-   }
+   
    else{
     var b = "";
   $.ajax({
@@ -136,12 +140,13 @@ $(".table tbody").on('click','#editRow',function(){
 			{
                             alert(data);
                             console.log(data);
-                            location.reload(true);
+                           $("#list").val(b);
+                             $("#listID").val(b);
+                             location.reload(true);
                         }
                }); 
-    $("#list").val(b);
-    $("#listID").val(b);
     
+     e.stopImmediatePropagation();
 }
  });
  
@@ -202,4 +207,7 @@ function SelectAll()
  }
 }
 
-
+function  loginPage()
+{
+    window.location.href ="index.php";
+}

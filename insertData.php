@@ -33,6 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 }
 
+$sql = "select * from list_9874597415 where items = '$items' ";
+$result = $conn->query($sql);
+
+if ($result->num_rows >=1) {
+	
+	while($row = $result->fetch_assoc()) {
+            echo 'duplicate entry, cant add';
+            
+        }
+        }
+else{
 $stmt = $conn->prepare("insert into list_9874597415(items) values(?)");
 $stmt->bind_param("s",$items);
 
@@ -47,5 +58,5 @@ else{
 }
 
 
-
+}
 ?>

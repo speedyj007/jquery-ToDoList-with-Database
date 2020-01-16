@@ -17,8 +17,17 @@
 	<br>
 		<label class = "h1"  ><u>Welcome</u> <u>Page</u></label>
 	<br><br>
+	
+	<?php
+	
+	
+	?>
+	
+	
  <?php
 
+ session_start();
+ 
 $conn = new mysqli("localhost","root","","register");
 
 if ($conn->connect_error) {
@@ -66,7 +75,10 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	
 	while($row = $result->fetch_assoc()) {
-			echo "<label class = 'welcome'  >welcome ".$row["firstname"]." ".$row["lastname"];
+            
+             $_SESSION["username"] = $row["firstname"]." ".$row["lastname"];
+             echo "<label class = 'welcome'  >welcome ".$_SESSION["username"]."</label>";
+             header("location:sessiontesting.php");
 	}
 }
 
@@ -76,11 +88,14 @@ else{
 }
 	
    
+$_SESSION["username"];
 
-echo "<br><br>";
-require_once 'ToDoList.php';
+echo "<br><br><label>";
 
+echo '</label>';
 ?>
+        
+        
 </body>
   
 </html>
